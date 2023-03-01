@@ -1,4 +1,4 @@
-#Этолаба
+#Этолаба3
 def prog1():
     a=[]
     while (b:=str(input()))!="stop":
