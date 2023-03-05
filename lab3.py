@@ -25,6 +25,9 @@ def prog3():
         if f == summ:
             print("Правильно")
             rh+=1
+        if f==0:
+            print("Игра приостановлена")
+            break
         else:
             mi+=1
             print("Ответ неправильный")
