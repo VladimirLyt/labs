@@ -46,8 +46,18 @@ def prog2():
         else:
             print('Нет в наличии', "\n")
 def prog3():
-    import json
-    with open("en-rus.json","r", encoding='utf-8') as f:
-        data = json.load(f)
-    g=data['words']
+    with open('en-ru.txt', 'r') as f:
+        ru_en = {}
+        for line in f.readlines():
+            words = line.strip().split(" - ")
+            if len(words) == 2:
+                ru_words = words[1].split(", ")
+                for ru_word in ru_words:
+                    if ru_word not in ru_en:
+                        ru_en[ru_word] = []
+                    ru_en[ru_word].append(words[0])
+        with open('ru-en.txt', 'w') as out_f:
+            for ru_word in sorted(ru_en.keys()):
+                en_words = ", ".join(sorted(ru_en[ru_word]))
+                out_f.write(f"{ru_word} - {en_words}\n")
 prog3()
