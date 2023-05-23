@@ -136,9 +136,4 @@ def prog2():
         soft.describe_flavors()
         soft.check("Ваниль")
     prog1()
-def prog3():
-    from Tkinter import *
-    window = Tk()
-    window.title("Добро пожаловать в приложение PythonRu")
-    window.mainloop()
-prog3()
+prog1()
