@@ -136,4 +136,37 @@ def prog2():
         soft.describe_flavors()
         soft.check("Ваниль")
     prog1()
-prog1()
+
+def prog3():
+    import tkinter as tk
+
+    class IceCreamStand:
+        def __init__(self, name, flavors):
+            self.name = name
+            self.flavors = flavors
+
+        def display_flavors(self):
+            print("Available flavors:")
+            for flavor in self.flavors:
+                print(flavor)
+
+    class IceCreamApp:
+        def __init__(self, ice_cream_stand):
+            self.ice_cream_stand = ice_cream_stand
+
+            self.root = tk.Tk()
+            self.root.title(self.ice_cream_stand.name)
+
+            self.flavors_label = tk.Label(self.root, text="Available flavors:")
+            self.flavors_label.pack()
+
+            for flavor in self.ice_cream_stand.flavors:
+                flavor_label = tk.Label(self.root, text=flavor)
+                flavor_label.pack()
+
+            self.root.mainloop()
+
+    ice_cream_stand = IceCreamStand("Cool Treats", ["Vanilla", "Chocolate", "Strawberry", "Mint"])
+    ice_cream_stand.display_flavors()
+    app = IceCreamApp(ice_cream_stand)
+prog3()
