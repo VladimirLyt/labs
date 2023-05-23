@@ -30,7 +30,7 @@ def prog2():
             print("The restaurant", self.restaurant_name, "is now open.")
 
     fast = Restaurant("Вкусно и точка", "Фаст-Фуд")
-    euro = Restaurant("Евразия", "Европейская")
+    euro = Restaurant("Евразия", "Еврояпон")
     coff = Restaurant("Cofix", "Кофейня")
 
     fast.describe_restaurant()
